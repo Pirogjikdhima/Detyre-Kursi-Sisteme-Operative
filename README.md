@@ -30,7 +30,7 @@ make
 After compilation, run the shell:
 
 ```bash
-./shell
+./main
 ```
 
 ## Supported Commands
