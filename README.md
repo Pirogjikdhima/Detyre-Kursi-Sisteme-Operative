@@ -65,7 +65,8 @@ The shell provides color-coded error messages for:
 - `redirection_handling.c`: I/O redirection
 
 ## License
-[Specify your license here]
+MIT License
+
 
 ## Author
 Piro Gjikdhima
