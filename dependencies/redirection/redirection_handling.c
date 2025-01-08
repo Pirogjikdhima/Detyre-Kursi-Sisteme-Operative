@@ -2,8 +2,6 @@
 
 void redirection(char *command, char *input_file, char *output_file){
     
-
-    
     if(input_file != NULL){
         int descriptor_of_input_file = open(input_file,O_RDONLY);
         

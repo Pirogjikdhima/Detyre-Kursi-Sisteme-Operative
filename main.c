@@ -17,9 +17,10 @@ int main() {
         fflush(stdout);
 
         fgets(command, MAX_COMMAND_LENGTH, stdin);
-        
         command[strcspn(command, "\n")] = '\0';
-        fprintf(stdout, "\033[32m"); 
+        fprintf(stdout, "\033[32m");
+
+        removeSpaces(command); 
         
         if (strcmp(command, "exit") == 0) {
             printf("\033[1;32m");//green
