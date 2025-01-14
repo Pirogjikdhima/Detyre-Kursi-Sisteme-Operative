@@ -27,8 +27,12 @@ int main() {
             printf("Exiting ...");
             break;
         }
-        else if(strncmp(command, "cd ", 3) == 0){
-            cd(command + 3);
+        else if(strncmp(command, "cd", 2) == 0){
+            if (command[2] == ' ' || command[2] == '\0') {
+                cd(command + 3);
+            } else {
+                fprintf(stderr, "\033[31mInvalid command: path expected after 'cd'\n");
+            }
         }
         else if(strchr(command, '&') != NULL){
             background(command);

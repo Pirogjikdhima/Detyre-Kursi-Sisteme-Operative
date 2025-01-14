@@ -1,6 +1,8 @@
 #include "cd_handling.h"  
 
 void cd(char *path) {
+    
+    char cwd[1024];
 
     removeSpaces(path); 
     
@@ -18,18 +20,15 @@ void cd(char *path) {
     else if(path[0]=='\''&& path[strlen(path)-1]=='\''){
         path = strtok(path,"'");
     }
-    
-
-    if (strlen(path) == 0) {
-
+    if(strcmp(path, "") == 0) {
+        return;
     }
-    
+
     if (chdir(path) != 0) {
         fprintf(stderr, "\033[31m");
         perror("");
     }
     
-    char cwd[1024];
     getcwd(cwd, sizeof(cwd));
     fprintf(stdout,"\033[1;33mYou are in the direcory: %s\n",cwd);
 }
